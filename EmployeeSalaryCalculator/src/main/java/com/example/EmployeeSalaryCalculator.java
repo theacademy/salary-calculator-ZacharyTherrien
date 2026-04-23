@@ -9,7 +9,7 @@ public class EmployeeSalaryCalculator
 	static String employeeID;
 	static String employeeName;
 	static int hoursWorked;
-	static int  hourlyRate;
+	static int hourlyRate;
 	static int basicPay;
 	static int overTime;
 	static int overTimeRate;
@@ -58,17 +58,16 @@ public class EmployeeSalaryCalculator
 
 				if(HW <= standardWorkingHours)
 				{
-					//YOUR CODE STARTS HERE
-					 
-
-					//YOUR CODE ENDS HERE
+					basicPay = hoursWorked * hourlyRate;
+					grossSalary = basicPay;
 				}
 				else
 				{
-					//YOUR CODE STARTS HERE
- 
-
-					//YOUR CODE ENDS HERE
+					overTime = hoursWorked - standardWorkingHours;
+					overTimeRate = 2;
+					basicPay = (standardWorkingHours * hourlyRate);
+					overTimePay = overTime * hourlyRate * 2;
+					grossSalary = basicPay + overTimePay;
 				}
 				return grossSalary;
 	}
